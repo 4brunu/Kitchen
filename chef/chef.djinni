@@ -24,11 +24,11 @@ service = interface +o +j
 
 api = interface +c
 {
-	get_application(): sandwich;
+	get_chef(): chef;
 	static get_instance(root: string, handler: handler, service: service): api;
 }
 
-sandwich = interface +c 
+chef = interface +c 
 {
 	get_version(): string;
 	grab(module: module): dish;

@@ -1,3 +1,4 @@
+.PHONY: android
 
 android:
-	cd /bin && ./install.sh -p app -i com.siliconbear.kitchen -f SM -a app
+	cd bin; bash install.sh -p app -i com.siliconbear.kitchen -f SM -a app

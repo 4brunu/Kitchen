@@ -25,12 +25,12 @@ LOCAL_GENERATED_SOURCES :=
 GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
 LOCAL_SRC_FILES := \
-	chef/handwritten-src/cpp/peanut-butter/PeanutApi.cpp \
-	chef/handwritten-src/cpp/peanut-butter/PeanutStore.cpp \
-	chef/handwritten-src/cpp/peanut-butter/test.cpp \
-	chef/handwritten-src/cpp/peanut-butter/PeanutHandler.cpp \
-	chef/handwritten-src/cpp/peanut-butter/PeanutService.cpp \
-	chef/handwritten-src/cpp/peanut-butter/PeanutSheaButter.cpp
+	chef/handwritten-src/cpp/master-chef/MasterChef.cpp \
+	chef/handwritten-src/cpp/master-chef/test.cpp \
+	chef/handwritten-src/cpp/master-chef/MasterChefService.cpp \
+	chef/handwritten-src/cpp/master-chef/MasterChefMenu.cpp \
+	chef/handwritten-src/cpp/master-chef/MasterChefApi.cpp \
+	chef/handwritten-src/cpp/master-chef/MasterChefHandler.cpp
 
 
 # Flags passed to both C and C++ files.

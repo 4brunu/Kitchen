@@ -8,15 +8,15 @@
 
 namespace naomi_gen {
 
+class Chef;
 class Handler;
-class Sandwich;
 class Service;
 
 class Api {
 public:
     virtual ~Api() {}
 
-    virtual std::shared_ptr<Sandwich> get_application() = 0;
+    virtual std::shared_ptr<Chef> get_chef() = 0;
 
     static std::shared_ptr<Api> get_instance(const std::string & root, const std::shared_ptr<Handler> & handler, const std::shared_ptr<Service> & service);
 };

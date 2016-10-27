@@ -4,8 +4,8 @@
 #include "NativeApi.hpp"  // my header
 #include "Marshal.hpp"
 #include "NativeApi.hpp"
+#include "NativeChef.hpp"
 #include "NativeHandler.hpp"
-#include "NativeSandwich.hpp"
 #include "NativeService.hpp"
 
 namespace djinni_generated {
@@ -23,13 +23,13 @@ CJNIEXPORT void JNICALL Java_com_siliconbear_kitchen_Api_00024CppProxy_nativeDes
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 
-CJNIEXPORT jobject JNICALL Java_com_siliconbear_kitchen_Api_00024CppProxy_native_1getApplication(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+CJNIEXPORT jobject JNICALL Java_com_siliconbear_kitchen_Api_00024CppProxy_native_1getChef(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
 {
     try {
         DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
         const auto& ref = ::djinni::objectFromHandleAddress<::naomi_gen::Api>(nativeRef);
-        auto r = ref->get_application();
-        return ::djinni::release(::djinni_generated::NativeSandwich::fromCpp(jniEnv, r));
+        auto r = ref->get_chef();
+        return ::djinni::release(::djinni_generated::NativeChef::fromCpp(jniEnv, r));
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
 

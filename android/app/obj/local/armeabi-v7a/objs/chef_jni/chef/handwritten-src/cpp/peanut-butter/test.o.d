@@ -10,11 +10,11 @@
  ../../core/naomi/generated-src/cpp/runnable.hpp \
  ../../core/naomi/generated-src/cpp/response.hpp \
  ../../core/naomi/generated-src/cpp/intention.hpp \
- ../../chef/handwritten-src/cpp/peanut-butter/PeanutModule.hpp \
+ ../../chef/handwritten-src/cpp/peanut-butter/MasterChefModule.hpp \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/map \
  ../../core/naomi/generated-src/cpp/dish.hpp \
- ../../chef/handwritten-src/cpp/peanut-butter/PeanutHandler.hpp \
- ../../chef/handwritten-src/cpp/peanut-butter/PeanutService.hpp \
+ ../../chef/handwritten-src/cpp/peanut-butter/MasterChefHandler.hpp \
+ ../../chef/handwritten-src/cpp/peanut-butter/MasterChefService.hpp \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/queue \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/mutex \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/condition_variable \
@@ -54,15 +54,15 @@
 
 ../../core/naomi/generated-src/cpp/intention.hpp:
 
-../../chef/handwritten-src/cpp/peanut-butter/PeanutModule.hpp:
+../../chef/handwritten-src/cpp/peanut-butter/MasterChefModule.hpp:
 
 /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/map:
 
 ../../core/naomi/generated-src/cpp/dish.hpp:
 
-../../chef/handwritten-src/cpp/peanut-butter/PeanutHandler.hpp:
+../../chef/handwritten-src/cpp/peanut-butter/MasterChefHandler.hpp:
 
-../../chef/handwritten-src/cpp/peanut-butter/PeanutService.hpp:
+../../chef/handwritten-src/cpp/peanut-butter/MasterChefService.hpp:
 
 /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/queue:
 

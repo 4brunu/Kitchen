@@ -1,6 +1,6 @@
 /home/izehi/Documents/Android/kitchen/android/app//obj/local/arm64-v8a/objs/chef_jni/chef/handwritten-src/cpp/peanut-butter/test.o: \
  ../../chef/handwritten-src/cpp/peanut-butter/test.cpp \
- ../../chef/handwritten-src/cpp/peanut-butter/stl.hpp \
+ ../../chef/handwritten-src/cpp/peanut-butter/include/stl.hpp \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/string \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/memory \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/sstream \
@@ -10,11 +10,12 @@
  ../../core/naomi/generated-src/cpp/runnable.hpp \
  ../../core/naomi/generated-src/cpp/response.hpp \
  ../../core/naomi/generated-src/cpp/intention.hpp \
- ../../chef/handwritten-src/cpp/peanut-butter/PeanutModule.hpp \
+ ../../chef/handwritten-src/cpp/peanut-butter/include/MasterChefModule.hpp \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/map \
+ ../../chef/handwritten-src/cpp/peanut-butter/include/stl.hpp \
  ../../core/naomi/generated-src/cpp/dish.hpp \
- ../../chef/handwritten-src/cpp/peanut-butter/PeanutHandler.hpp \
- ../../chef/handwritten-src/cpp/peanut-butter/PeanutService.hpp \
+ ../../chef/handwritten-src/cpp/peanut-butter/include/MasterChefHandler.hpp \
+ ../../chef/handwritten-src/cpp/peanut-butter/include/MasterChefService.hpp \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/queue \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/mutex \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/condition_variable \
@@ -34,7 +35,7 @@
  ../../core/deps/include/curl_easy_info.h \
  ../../core/deps/include/curl_exception.h
 
-../../chef/handwritten-src/cpp/peanut-butter/stl.hpp:
+../../chef/handwritten-src/cpp/peanut-butter/include/stl.hpp:
 
 /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/string:
 
@@ -54,15 +55,17 @@
 
 ../../core/naomi/generated-src/cpp/intention.hpp:
 
-../../chef/handwritten-src/cpp/peanut-butter/PeanutModule.hpp:
+../../chef/handwritten-src/cpp/peanut-butter/include/MasterChefModule.hpp:
 
 /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/map:
 
+../../chef/handwritten-src/cpp/peanut-butter/include/stl.hpp:
+
 ../../core/naomi/generated-src/cpp/dish.hpp:
 
-../../chef/handwritten-src/cpp/peanut-butter/PeanutHandler.hpp:
+../../chef/handwritten-src/cpp/peanut-butter/include/MasterChefHandler.hpp:
 
-../../chef/handwritten-src/cpp/peanut-butter/PeanutService.hpp:
+../../chef/handwritten-src/cpp/peanut-butter/include/MasterChefService.hpp:
 
 /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/queue:
 

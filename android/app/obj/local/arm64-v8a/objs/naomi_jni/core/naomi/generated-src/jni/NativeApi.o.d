@@ -13,10 +13,10 @@
  ../../core/support-lib/jni/Marshal.hpp \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/unordered_set \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/vector \
+ ../../core/naomi/generated-src/jni/NativeChef.hpp \
+ ../../core/naomi/generated-src/cpp/chef.hpp \
  ../../core/naomi/generated-src/jni/NativeHandler.hpp \
  ../../core/naomi/generated-src/cpp/handler.hpp \
- ../../core/naomi/generated-src/jni/NativeSandwich.hpp \
- ../../core/naomi/generated-src/cpp/sandwich.hpp \
  ../../core/naomi/generated-src/jni/NativeService.hpp \
  ../../core/naomi/generated-src/cpp/service.hpp
 
@@ -46,13 +46,13 @@
 
 /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/vector:
 
+../../core/naomi/generated-src/jni/NativeChef.hpp:
+
+../../core/naomi/generated-src/cpp/chef.hpp:
+
 ../../core/naomi/generated-src/jni/NativeHandler.hpp:
 
 ../../core/naomi/generated-src/cpp/handler.hpp:
-
-../../core/naomi/generated-src/jni/NativeSandwich.hpp:
-
-../../core/naomi/generated-src/cpp/sandwich.hpp:
 
 ../../core/naomi/generated-src/jni/NativeService.hpp:
 

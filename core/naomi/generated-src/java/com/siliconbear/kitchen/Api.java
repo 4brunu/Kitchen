@@ -6,7 +6,7 @@ package com.siliconbear.kitchen;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public abstract class Api {
-    public abstract Sandwich getApplication();
+    public abstract Chef getChef();
 
     public static native Api getInstance(String root, Handler handler, Service service);
 
@@ -34,11 +34,11 @@ public abstract class Api {
         }
 
         @Override
-        public Sandwich getApplication()
+        public Chef getChef()
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            return native_getApplication(this.nativeRef);
+            return native_getChef(this.nativeRef);
         }
-        private native Sandwich native_getApplication(long _nativeRef);
+        private native Chef native_getChef(long _nativeRef);
     }
 }

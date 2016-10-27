@@ -3,14 +3,14 @@
 
 #import <Foundation/Foundation.h>
 @class SMApi;
-@class SMSandwich;
+@class SMChef;
 @protocol SMHandler;
 @protocol SMService;
 
 
 @interface SMApi : NSObject
 
-- (nullable SMSandwich *)getApplication;
+- (nullable SMChef *)getChef;
 
 + (nullable SMApi *)getInstance:(nonnull NSString *)root
                         handler:(nullable id<SMHandler>)handler
