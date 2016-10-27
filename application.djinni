@@ -1,0 +1,13 @@
+module = enum
+{
+	CONFIG;
+	CATALOG;
+	CHECKOUT;
+}
+
+intention = enum
+{
+	STORE_LIST;
+	PRODUCT_LIST;
+}
+

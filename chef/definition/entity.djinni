@@ -1,0 +1,179 @@
+
+simple_entity_viewer = interface +c 
+{
+	get_id(): i32;
+	get_name(): string;
+	get_extra(): string;
+}
+
+user = interface +c 
+{
+	get_id(): i32;
+	get_email(): string;
+	get_username(): string;
+	get_cart_qty(): i32;
+	get_last_update(): string;
+
+	static get_instance(cursor: simple_cursor): user;
+}
+
+store = interface +c 
+{
+	get_id(): i32;
+	get_code(): string;
+	get_name(): string;
+	get_country(): string;
+	get_last_update(): string;
+
+	static get_instance(cursor: simple_cursor): store;
+}
+
+banner = interface +c
+{
+	get_id(): i32;
+	get_name(): string;
+	get_url(): string;
+	get_image_path(): string;
+	has_child(): bool;
+	get_product_id(): i32;
+	get_filter_options(): map<string, string>;
+	get_last_update(): string;
+	get_simple_data_object(): simple_entity_viewer;
+
+	static get_instance(cursor: simple_cursor): banner;
+}
+
+category = interface +c
+{
+	get_id(): i32;
+	get_name(): string;
+	get_image_url(): string;
+	get_parent_id(): i32;
+	get_filter_options(): map<string, string>;
+	get_last_update(): string;
+	get_simple_data_object(): simple_entity_viewer;
+	
+	static get_instance(cursor: simple_cursor): category;
+}
+
+product = interface +c
+{
+	get_id(): i32;
+	get_name(): string;
+	get_price(): string;
+	get_price_slash(): string;
+	get_image_url(): string;
+	get_stock_status(): bool;
+	get_description(): string;
+	get_preview_images(): list<string>;
+	get_manufacturer(): string;
+	get_tag(): string;
+	get_max_qty(): i32;
+	get_product_configs(): list<product_config>;
+
+	static get_instance(cursor: simple_cursor): product;	
+}
+
+product_option = interface +c 
+{
+	get_id(): i32;
+	get_name(): string;
+	to_json_string(): string;
+	get_dependencies(): list<string>;
+	is_dependent(option: product_option): bool;
+
+	static get_instance(json_str: string): product_option;
+}
+
+product_config = interface +c 
+{
+	get_id(): i32;
+	get_name(): string;
+	is_required(): bool;
+	get_options(): list<product_option>;
+}
+
+cart = interface +c
+{
+	get_id(): i32;
+	get_qty(): i32;
+	get_total(): string;
+	get_max_qty(): i32;
+	get_name(): string;
+	get_price(): string;
+	get_price_slash(): string;
+	get_image_url(): string;
+	get_stock_status(): bool;
+
+	set_qty(qty: i32);
+	static get_instance(cursor: simple_cursor): cart;
+}
+
+address = interface +c 
+{
+	get_id(): i32;
+	get_name(): string;
+	get_email(): string;
+	get_city(): string;
+	get_phone(): string;
+	get_street(): string;
+	get_state(): string;
+	get_state_code(): string;
+	get_state_id(): string;
+	get_status(): bool;
+	get_zip(): string;
+	get_country(): string;
+	get_country_code(): string;
+
+	static get_instance(cursor: simple_cursor): address;	
+}
+
+country = interface +c 
+{
+	get_id(): i32;
+	get_code(): string;
+	get_name(): string;
+	get_states(): map<string, string>;
+
+	static get_instance(cursor: simple_cursor): country;
+}
+
+shipping_method = interface +c 
+{
+	get_id(): i32;
+	get_title(): string;
+	get_name(): string;
+	get_code(): string;
+	get_fee(): string;
+	is_selected(): bool;
+}
+
+payment_method = interface +c 
+{
+	get_method(): string;
+	get_title(): string;
+	get_content(): string;
+	get_show_type(): i32;
+}
+
+fee = interface +c 
+{
+	get_sub_total(): string;
+	get_grand_total(): string;
+	get_discount(): string;
+	get_tax(): string;
+	get_coupon(): string;
+}
+
+checkout_config = interface +c 
+{
+	get_fee(): fee;
+	get_method(): list<shipping_method>;
+	get_payment(): list<payment_method>;
+
+	static get_instance(cursor: simple_cursor): checkout_config;
+}
+
+
+
+

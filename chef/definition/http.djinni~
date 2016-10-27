@@ -1,0 +1,62 @@
+status_line = interface +c 
+{
+	get_status_code(): i32;
+	get_reason_phrase(): string;
+}
+
+http_adapter = interface +j +o 
+{
+	set_headers(headers: map<string, string>);
+	open_connection(req: http_request_base, callback: http_callback);
+}
+
+http_request_base = interface +c 
+{
+	get_url(): string;
+	get_method(): string;
+	get_params(): map<string, string>;
+}
+
+network_interface = interface +c 
+{
+	get_parameters(): http_params;
+	execute (method: http_request_base, call_back: http_callback);
+}
+
+http_params = interface +c 
+{
+	clear();
+	get_parameters(): map<string, string>;
+	set_integer_parameter (name: string, value: i32);
+	set_parameter(name: string, value: string);
+	set_boolean_parameter(name: string, value: bool);
+	remove_parameter(name: string);
+	is_parameter_set(name: string): bool;
+}
+
+http_response = interface +c 
+{
+	static get_instance(code: i32, phrase: string): http_response;
+	get_status_line(): status_line;
+	set_status_line(code: i32, phrase: string);
+	set_status_line_object(status: status_line);
+	set_status_code(code: i32);
+	set_reason_phrase(phrase: string);
+}
+
+http_callback = interface +c 
+{
+	done(response: http_response);
+}
+
+response_object = interface +c 
+{
+	get_message(): string;
+	get_cursor(): simple_cursor;
+}
+
+response_callback = interface +j +o 
+{
+	done(response_object: response_object, exception: oak_exception);
+}
+
