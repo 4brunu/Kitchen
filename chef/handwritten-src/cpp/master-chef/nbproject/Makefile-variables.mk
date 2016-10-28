@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=libpeanut-butter.a
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/libpeanut-butter.a
+CND_ARTIFACT_NAME_Debug=libmaster-chef.a
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/libmaster-chef.a
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=peanut-butter.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/peanut-butter.tar
+CND_PACKAGE_NAME_Debug=master-chef.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/master-chef.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=libpeanut-butter.a
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/libpeanut-butter.a
+CND_ARTIFACT_NAME_Release=libmaster-chef.a
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/libmaster-chef.a
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=peanut-butter.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/peanut-butter.tar
+CND_PACKAGE_NAME_Release=master-chef.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/master-chef.tar
 #
 # include compiler specific variables
 #

@@ -3,11 +3,12 @@
 
 package com.siliconbear.kitchen;
 
-import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public abstract class Recipe {
-    public abstract ArrayList<Config> getConfigurations();
+    public abstract Dish getDish();
+
+    public abstract Module getModule();
 
     private static final class CppProxy extends Recipe
     {
@@ -33,11 +34,19 @@ public abstract class Recipe {
         }
 
         @Override
-        public ArrayList<Config> getConfigurations()
+        public Dish getDish()
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            return native_getConfigurations(this.nativeRef);
+            return native_getDish(this.nativeRef);
         }
-        private native ArrayList<Config> native_getConfigurations(long _nativeRef);
+        private native Dish native_getDish(long _nativeRef);
+
+        @Override
+        public Module getModule()
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            return native_getModule(this.nativeRef);
+        }
+        private native Module native_getModule(long _nativeRef);
     }
 }

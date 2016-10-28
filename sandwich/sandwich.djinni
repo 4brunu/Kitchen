@@ -1,0 +1,5 @@
+sandwich = interface +c 
+{
+	get_recipe(): recipe;
+	static get_instance(): sandwich;
+}

@@ -16,10 +16,12 @@
 
 #include <string>
 #include <memory>
+#include <vector>
 #include <sstream>
 #include <iostream>
 #include <algorithm>
 #include <functional>
+#include <unordered_map>
 
 #include "handler.hpp"
 #include "runnable.hpp"

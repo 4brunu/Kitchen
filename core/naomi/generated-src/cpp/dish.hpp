@@ -4,6 +4,8 @@
 #pragma once
 
 #include <memory>
+#include <string>
+#include <unordered_map>
 
 namespace naomi_gen {
 
@@ -14,7 +16,7 @@ class Dish {
 public:
     virtual ~Dish() {}
 
-    virtual void serve(intention intent, const std::shared_ptr<Response> & callback) = 0;
+    virtual void serve(intention intent, const std::unordered_map<std::string, std::string> & params, const std::shared_ptr<Response> & callback) = 0;
 };
 
 }  // namespace naomi_gen

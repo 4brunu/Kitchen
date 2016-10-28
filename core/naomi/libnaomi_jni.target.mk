@@ -14,7 +14,8 @@ gyp_shared_intermediate_dir := $(call intermediates-dir-for,GYP,shared,,,$(GYP_V
 GYP_TARGET_DEPENDENCIES := \
 	$(call intermediates-dir-for,STATIC_LIBRARIES,sqlite3,,,$(GYP_VAR_PREFIX))/sqlite3.a \
 	$(call intermediates-dir-for,STATIC_LIBRARIES,djinni_jni,,,$(GYP_VAR_PREFIX))/djinni_jni.a \
-	$($(GYP_VAR_PREFIX)TARGET_OUT_INTERMEDIATE_LIBRARIES)/libchef_jni.so
+	$($(GYP_VAR_PREFIX)TARGET_OUT_INTERMEDIATE_LIBRARIES)/libchef_jni.so \
+	$($(GYP_VAR_PREFIX)TARGET_OUT_INTERMEDIATE_LIBRARIES)/libsandwich_jni.so
 
 GYP_GENERATED_OUTPUTS :=
 
@@ -35,7 +36,7 @@ LOCAL_SRC_FILES := \
 	core/naomi/generated-src/jni/NativeResponse.cpp \
 	core/naomi/generated-src/jni/NativeRecipe.cpp \
 	core/naomi/generated-src/jni/NativeApi.cpp \
-	core/naomi/generated-src/jni/NativeConfig.cpp
+	core/naomi/generated-src/jni/NativeSandwich.cpp
 
 
 # Flags passed to both C and C++ files.
@@ -144,7 +145,8 @@ LOCAL_STATIC_LIBRARIES := \
 LOCAL_GROUP_STATIC_LIBRARIES := true
 
 LOCAL_SHARED_LIBRARIES := \
-	libchef_jni
+	libchef_jni \
+	libsandwich_jni
 
 # Add target alias to "gyp_all_modules" target.
 .PHONY: gyp_all_modules

@@ -26,7 +26,6 @@ GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
 LOCAL_SRC_FILES := \
 	chef/handwritten-src/cpp/master-chef/MasterChef.cpp \
-	chef/handwritten-src/cpp/master-chef/test.cpp \
 	chef/handwritten-src/cpp/master-chef/MasterChefService.cpp \
 	chef/handwritten-src/cpp/master-chef/MasterChefMenu.cpp \
 	chef/handwritten-src/cpp/master-chef/MasterChefApi.cpp \

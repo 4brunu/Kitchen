@@ -18,12 +18,11 @@
 #include "chef.hpp"
 
 #include "dish.hpp"
-#include "config.hpp"
 #include "recipe.hpp"
 #include "response.hpp"
+#include "MasterChefMenu.hpp"
 #include "MasterChefHandler.hpp"
 #include "MasterChefService.hpp"
-#include "lib/configuration.hpp"
 
 using namespace naomi_gen;
 

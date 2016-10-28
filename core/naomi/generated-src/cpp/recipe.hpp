@@ -4,17 +4,19 @@
 #pragma once
 
 #include <memory>
-#include <vector>
 
 namespace naomi_gen {
 
-class Config;
+class Dish;
+enum class module;
 
 class Recipe {
 public:
     virtual ~Recipe() {}
 
-    virtual std::vector<std::shared_ptr<Config>> get_configurations() = 0;
+    virtual std::shared_ptr<Dish> get_dish() = 0;
+
+    virtual module get_module() = 0;
 };
 
 }  // namespace naomi_gen

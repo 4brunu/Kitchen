@@ -3,10 +3,11 @@
 
 package com.siliconbear.kitchen;
 
+import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public abstract class Dish {
-    public abstract void serve(Intention intent, Response callback);
+    public abstract void serve(Intention intent, HashMap<String, String> params, Response callback);
 
     private static final class CppProxy extends Dish
     {
@@ -32,11 +33,11 @@ public abstract class Dish {
         }
 
         @Override
-        public void serve(Intention intent, Response callback)
+        public void serve(Intention intent, HashMap<String, String> params, Response callback)
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            native_serve(this.nativeRef, intent, callback);
+            native_serve(this.nativeRef, intent, params, callback);
         }
-        private native void native_serve(long _nativeRef, Intention intent, Response callback);
+        private native void native_serve(long _nativeRef, Intention intent, HashMap<String, String> params, Response callback);
     }
 }

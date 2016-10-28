@@ -13,17 +13,16 @@
 
 #include "include/chef/MasterChef.hpp"
 
-MasterChef::MasterChef(const shared_ptr<MasterChefHandler> & handler, 
-            const shared_ptr<MasterChefService> & service) 
-: m_handler {handler}, m_service {service} {
+MasterChef::MasterChef(const shared_ptr<MasterChefHandler> & handler,
+        const shared_ptr<MasterChefService> & service)
+: m_handler{handler}, m_service{service}
+{
     m_version = naomi::version;
     m_store = make_shared<MasterChefMenu>(m_handler, m_service);
-    
-    application(m_store);
 }
 
 MasterChef::~MasterChef() {
-    
+
 }
 
 string MasterChef::get_version() {
@@ -35,12 +34,8 @@ shared_ptr<naomi_gen::Dish> MasterChef::grab(naomi_gen::module module) {
 }
 
 void MasterChef::add_recipe(const shared_ptr<naomi_gen::Recipe>& recipe) {
-    auto configs = recipe->get_configurations();
-    for (auto itr = configs.begin(); itr != configs.end(); itr++) {
-        shared_ptr<naomi_gen::Config> config = * itr;
-        if (config != nullptr) {
-            
-        }
-        //m_store->addMasterChef(config->get_dish(), config->get_module());
-    }
+    shared_ptr<MasterChefDish> dish(dynamic_cast<MasterChefDish*> (recipe->get_dish().get()));
+    m_store->addDish(dish, recipe->get_module());
 }
+
+

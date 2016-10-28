@@ -11,6 +11,7 @@ include $(LOCAL_PATH)/chef/libchef_jni.target.mk
 include $(LOCAL_PATH)/core/deps/sqlite3.target.mk
 include $(LOCAL_PATH)/core/naomi/libnaomi_jni.target.mk
 include $(LOCAL_PATH)/core/support-lib/djinni_jni.target.mk
+include $(LOCAL_PATH)/sandwich/libsandwich_jni.target.mk
 
 # "gyp_all_modules" is a concatenation of the "gyp_all_modules" targets from
 # all the included sub-makefiles. This is just here to clarify.

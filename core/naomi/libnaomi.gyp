@@ -7,6 +7,7 @@
               "../deps/sqlite3.gyp:sqlite3",
               "../support-lib/support_lib.gyp:djinni_jni",
 	      "../../chef/chef.gyp:libchef_jni", 
+	      "../../sandwich/sandwich.gyp:libsandwich_jni", 
 	      
             ],
 	    "libraries": ["libcurl.a", "librestful.a", "libiconv.a", "libyajl.a", "libcurlcpp.a",],
@@ -31,6 +32,7 @@
               "../deps/sqlite3.gyp:sqlite3",
               "../support-lib/support_lib.gyp:djinni_objc",
 	      "../../chef/chef.gyp:libchef_objc", 
+	      "../../sandwich/sandwich.gyp:libsandwich_objc", 
 	      
             ],
             "sources": [

@@ -38,9 +38,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/MasterChef.o \
 	${OBJECTDIR}/MasterChefApi.o \
 	${OBJECTDIR}/MasterChefHandler.o \
-	${OBJECTDIR}/MasterChefService.o \
 	${OBJECTDIR}/MasterChefMenu.o \
-	${OBJECTDIR}/test.o
+	${OBJECTDIR}/MasterChefService.o
 
 
 # C Compiler Flags
@@ -61,13 +60,13 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libpeanut-butter.a
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libmaster-chef.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libpeanut-butter.a: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libmaster-chef.a: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libpeanut-butter.a
-	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libpeanut-butter.a ${OBJECTFILES} 
-	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libpeanut-butter.a
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libmaster-chef.a
+	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libmaster-chef.a ${OBJECTFILES} 
+	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libmaster-chef.a
 
 ${OBJECTDIR}/MasterChef.o: MasterChef.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -84,20 +83,15 @@ ${OBJECTDIR}/MasterChefHandler.o: MasterChefHandler.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MasterChefHandler.o MasterChefHandler.cpp
 
-${OBJECTDIR}/MasterChefService.o: MasterChefService.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MasterChefService.o MasterChefService.cpp
-
 ${OBJECTDIR}/MasterChefMenu.o: MasterChefMenu.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MasterChefMenu.o MasterChefMenu.cpp
 
-${OBJECTDIR}/test.o: test.cpp 
+${OBJECTDIR}/MasterChefService.o: MasterChefService.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/test.o test.cpp
+	$(COMPILE.cc) -g -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/MasterChefService.o MasterChefService.cpp
 
 # Subprojects
 .build-subprojects:
@@ -105,7 +99,7 @@ ${OBJECTDIR}/test.o: test.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libpeanut-butter.a
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libmaster-chef.a
 
 # Subprojects
 .clean-subprojects:

@@ -9,6 +9,7 @@
 @interface SMDish : NSObject
 
 - (void)serve:(SMIntention)intent
+       params:(nonnull NSDictionary<NSString *, NSString *> *)params
      callback:(nullable id<SMResponse>)callback;
 
 @end

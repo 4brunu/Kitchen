@@ -1,6 +1,6 @@
 @import "../application.djinni"
 
-config = interface +c 
+recipe = interface +c 
 {
 	get_dish(): dish;
 	get_module(): module;
@@ -24,7 +24,7 @@ service = interface +o +j
 
 api = interface +c
 {
-	get_application(): chef;
+	get_chef(): chef;
 	static get_instance(root: string, handler: handler, service: service): api;
 }
 
@@ -33,11 +33,6 @@ chef = interface +c
 	get_version(): string;
 	grab(module: module): dish;
 	add_recipe(recipe: recipe);
-}
-
-recipe = interface +c 
-{
-	get_configurations(): list<config>;
 }
 
 response = interface +o +j 

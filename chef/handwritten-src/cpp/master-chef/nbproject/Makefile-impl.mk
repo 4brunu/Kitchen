@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=peanut-butter
+PROJECTNAME=master-chef
 
 # Active Configuration
 DEFAULTCONF=Debug

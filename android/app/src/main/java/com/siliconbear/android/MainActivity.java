@@ -8,7 +8,10 @@ import com.siliconbear.kitchen.Chef;
 import com.siliconbear.kitchen.Intention;
 import com.siliconbear.kitchen.Module;
 import com.siliconbear.kitchen.Response;
+import com.siliconbear.kitchen.Sandwich;
 import com.siliconbear.smartshop.app.DjinniKitchen;
+
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,8 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
         mKitchen = new DjinniKitchen("");
         mChef = mKitchen.initialize().getChef();
-        mChef.grab(Module.CATALOG)
-                .serve(Intention.STORE_LIST, new Response() {
+        mChef.addRecipe(Sandwich.getInstance().getRecipe());
+        mChef.grab(Module.CHECKOUT)
+                .serve(Intention.STORE_LIST, new HashMap<String, String>(), new Response() {
                     @Override
                     public void onLoad(String message) {
                         webview.getSettings().setJavaScriptEnabled(true);

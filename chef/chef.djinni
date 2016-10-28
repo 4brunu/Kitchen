@@ -1,6 +1,6 @@
 @import "../application.djinni"
 
-config = interface +c 
+recipe = interface +c 
 {
 	get_dish(): dish;
 	get_module(): module;
@@ -35,11 +35,6 @@ chef = interface +c
 	add_recipe(recipe: recipe);
 }
 
-recipe = interface +c 
-{
-	get_configurations(): list<config>;
-}
-
 response = interface +o +j 
 {
 	on_load(message: string);
@@ -47,7 +42,7 @@ response = interface +o +j
 
 dish = interface +c 
 {
-	serve(intent: intention, callback: response);
+	serve(intent: intention, params: map<string, string>, callback: response);
 }
 
 

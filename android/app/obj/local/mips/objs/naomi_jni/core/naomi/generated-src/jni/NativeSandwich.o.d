@@ -11,13 +11,6 @@
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/typeindex \
  ../../core/support-lib/jni/../djinni_common.hpp \
  ../../core/naomi/generated-src/cpp/sandwich.hpp \
- ../../core/support-lib/jni/Marshal.hpp \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/unordered_set \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/vector \
- ../../core/naomi/generated-src/jni/NativeDish.hpp \
- ../../core/naomi/generated-src/cpp/dish.hpp \
- ../../core/naomi/generated-src/jni/NativeModule.hpp \
- ../../core/naomi/generated-src/cpp/module.hpp \
  ../../core/naomi/generated-src/jni/NativeRecipe.hpp \
  ../../core/naomi/generated-src/cpp/recipe.hpp
 
@@ -42,20 +35,6 @@
 ../../core/support-lib/jni/../djinni_common.hpp:
 
 ../../core/naomi/generated-src/cpp/sandwich.hpp:
-
-../../core/support-lib/jni/Marshal.hpp:
-
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/unordered_set:
-
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/vector:
-
-../../core/naomi/generated-src/jni/NativeDish.hpp:
-
-../../core/naomi/generated-src/cpp/dish.hpp:
-
-../../core/naomi/generated-src/jni/NativeModule.hpp:
-
-../../core/naomi/generated-src/cpp/module.hpp:
 
 ../../core/naomi/generated-src/jni/NativeRecipe.hpp:
 

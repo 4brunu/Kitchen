@@ -1,0 +1,15 @@
+
+runnable = interface +c 
+{
+	run();
+}
+
+handler = interface +o +j 
+{
+    	post(runnable: runnable);
+}
+
+thread_launcher = interface +o +j 
+{
+	start_thread(name: string, runnable: runnable);
+}

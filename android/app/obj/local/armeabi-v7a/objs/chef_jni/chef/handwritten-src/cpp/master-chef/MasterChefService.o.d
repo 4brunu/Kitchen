@@ -9,6 +9,7 @@
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/sstream \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/iostream \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/algorithm \
+ /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/unordered_map \
  ../../core/naomi/generated-src/cpp/handler.hpp \
  ../../core/naomi/generated-src/cpp/runnable.hpp \
  ../../core/naomi/generated-src/cpp/service.hpp
@@ -30,6 +31,8 @@
 /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/iostream:
 
 /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/algorithm:
+
+/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/unordered_map:
 
 ../../core/naomi/generated-src/cpp/handler.hpp:
 
