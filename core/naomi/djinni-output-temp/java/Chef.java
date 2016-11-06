@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public abstract class Chef {
     public abstract String getVersion();
 
-    public abstract Dish grab(Module module);
+    public abstract Dish grab(Menu menu);
 
     public abstract void addRecipe(Recipe recipe);
 
@@ -44,12 +44,12 @@ public abstract class Chef {
         private native String native_getVersion(long _nativeRef);
 
         @Override
-        public Dish grab(Module module)
+        public Dish grab(Menu menu)
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            return native_grab(this.nativeRef, module);
+            return native_grab(this.nativeRef, menu);
         }
-        private native Dish native_grab(long _nativeRef, Module module);
+        private native Dish native_grab(long _nativeRef, Menu menu);
 
         @Override
         public void addRecipe(Recipe recipe)

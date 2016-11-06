@@ -1,16 +1,19 @@
 package com.siliconbear.android;
 
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebView;
 
 import com.siliconbear.kitchen.Chef;
-import com.siliconbear.kitchen.Intention;
-import com.siliconbear.kitchen.Module;
-import com.siliconbear.kitchen.Response;
+import com.siliconbear.kitchen.LoadType;
+import com.siliconbear.kitchen.Menu;
 import com.siliconbear.kitchen.Sandwich;
+import com.siliconbear.kitchen.ServiceBinder;
+import com.siliconbear.kitchen.SimpleCursor;
 import com.siliconbear.smartshop.app.DjinniKitchen;
 
+import java.io.File;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,13 +27,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final WebView webview = (WebView) findViewById(R.id.webView1);
 
-        mKitchen = new DjinniKitchen("");
+        String name = Environment.getDataDirectory() + "/data/" + getPackageName();
+        File folder = new File(name);
+
+        if (!folder.exists()) {
+            folder.mkdir();
+        }
+
+        mKitchen = new DjinniKitchen(name);
         mChef = mKitchen.initialize().getChef();
         mChef.addRecipe(Sandwich.getInstance().getRecipe());
-        mChef.grab(Module.CHECKOUT)
-                .serve(Intention.STORE_LIST, new HashMap<String, String>(), new Response() {
+
+        HashMap<String, String> s = new HashMap<>();
+        s.put("data", "{\"product_id\": \"76684\", \"width\": 300, \"height\": 300, \"limit\": 2}");
+
+        mChef.grab(Menu.OPEN_BEETROOT_SANDWICH)
+
+                .serve(com.siliconbear.kitchen.Package.STORE_LIST, s, new ServiceBinder() {
                     @Override
-                    public void onLoad(String message) {
+                    public LoadType loadType() {
+                        return LoadType.LAZY;
+                    }
+
+                    @Override
+                    public void onLoad(String message, SimpleCursor cursor) {
                         webview.getSettings().setJavaScriptEnabled(true);
                         webview.loadDataWithBaseURL("", message, "text/html", "UTF-8", "");
                     }

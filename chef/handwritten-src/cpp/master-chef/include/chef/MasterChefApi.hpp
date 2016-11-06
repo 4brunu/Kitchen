@@ -19,7 +19,6 @@
 #include "handler.hpp"
 #include "service.hpp"
 
-#include "MasterChefHandler.hpp"
 #include "MasterChef.hpp"
 
 using namespace naomi_gen;
@@ -34,14 +33,11 @@ public:
             const shared_ptr<Handler> & handler, 
             const shared_ptr<Service> & service);
     
-    virtual ~MasterChefApi();
-    
 private:
     string name;
+    string m_root;
     
 private:
-    shared_ptr<MasterChefHandler> m_handler;
-    shared_ptr<MasterChefService> m_service;
     shared_ptr<MasterChef> m_application;
 };
 

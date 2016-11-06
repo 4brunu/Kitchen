@@ -14,11 +14,8 @@
 #include "include/chef/MasterChefHandler.hpp"
 
 MasterChefHandler::MasterChefHandler(const shared_ptr<naomi_gen::Handler> & handler)
-: m_handler {handler} {
+: m_handler { move(handler) } {
     
-}
-
-MasterChefHandler::~MasterChefHandler() {
 }
 
 void MasterChefHandler::handle(const TaskHandler::Task & task) {

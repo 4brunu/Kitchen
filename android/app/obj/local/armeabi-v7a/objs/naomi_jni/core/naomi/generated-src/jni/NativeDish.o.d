@@ -13,10 +13,10 @@
  ../../core/support-lib/jni/Marshal.hpp \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/unordered_set \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/vector \
- ../../core/naomi/generated-src/jni/NativeIntention.hpp \
- ../../core/naomi/generated-src/cpp/intention.hpp \
- ../../core/naomi/generated-src/jni/NativeResponse.hpp \
- ../../core/naomi/generated-src/cpp/response.hpp
+ ../../core/naomi/generated-src/jni/NativePackage.hpp \
+ ../../core/naomi/generated-src/cpp/package.hpp \
+ ../../core/naomi/generated-src/jni/NativeServiceBinder.hpp \
+ ../../core/naomi/generated-src/cpp/service_binder.hpp
 
 ../../core/naomi/generated-src/jni/NativeDish.hpp:
 
@@ -44,10 +44,10 @@
 
 /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/vector:
 
-../../core/naomi/generated-src/jni/NativeIntention.hpp:
+../../core/naomi/generated-src/jni/NativePackage.hpp:
 
-../../core/naomi/generated-src/cpp/intention.hpp:
+../../core/naomi/generated-src/cpp/package.hpp:
 
-../../core/naomi/generated-src/jni/NativeResponse.hpp:
+../../core/naomi/generated-src/jni/NativeServiceBinder.hpp:
 
-../../core/naomi/generated-src/cpp/response.hpp:
+../../core/naomi/generated-src/cpp/service_binder.hpp:

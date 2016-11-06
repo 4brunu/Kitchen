@@ -14,25 +14,35 @@
 #ifndef CONFIGMODULE_HPP
 #define CONFIGMODULE_HPP
 
-#include "chef/lib/stl.hpp"
-#include "response.hpp"
-#include "intention.hpp"
-#include "chef/MasterChefModule.hpp"
+#include "load_type.hpp"
+#include "service_binder.hpp"
+#include "package.hpp"
 
+#include "chef/lib/stl.hpp"
+#include "BaseModule.hpp"
+#include "Stores.hpp"
+#include "ResponseObject.hpp"
+#include "SharedPreferences.hpp"
+
+#include "curl_ios.h"
 #include "curl_easy.h"
 #include "curl_exception.h"
+#include "curl_header.h"
 
-class ConfigModule : public MasterChefModule<ConfigModule>
+class ConfigModule : public BaseModule<ConfigModule>
 {
+    using package_mapper = map<naomi_gen::package, package_map>;
+
 public:
     ConfigModule();
-    virtual ~ConfigModule();
 
 public:
-    virtual void set_intentions(map<naomi_gen::intention, intent_map> * mapper) override;
+    virtual void set_packages(package_mapper * mapper) override;
 
 public:
-    void testing(const shared_ptr<naomi_gen::Response>& callback);
+    void testing(const shared_ptr<MasterChefHandler>& handler,
+            const unordered_map<string, string>& params,
+            const shared_ptr<naomi_gen::ServiceBinder>& callback);
 
 };
 

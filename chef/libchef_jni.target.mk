@@ -135,6 +135,7 @@ LOCAL_STATIC_LIBRARIES := \
 	libiconv \
 	libyajl \
 	libcurlcpp \
+	libleveldb \
 	sqlite3 \
 	djinni_jni
 

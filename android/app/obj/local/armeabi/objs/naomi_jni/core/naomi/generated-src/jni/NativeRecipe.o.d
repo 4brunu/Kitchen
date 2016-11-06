@@ -13,8 +13,8 @@
  ../../core/naomi/generated-src/cpp/recipe.hpp \
  ../../core/naomi/generated-src/jni/NativeDish.hpp \
  ../../core/naomi/generated-src/cpp/dish.hpp \
- ../../core/naomi/generated-src/jni/NativeModule.hpp \
- ../../core/naomi/generated-src/cpp/module.hpp
+ ../../core/naomi/generated-src/jni/NativeMenu.hpp \
+ ../../core/naomi/generated-src/cpp/menu.hpp
 
 ../../core/naomi/generated-src/jni/NativeRecipe.hpp:
 
@@ -42,6 +42,6 @@
 
 ../../core/naomi/generated-src/cpp/dish.hpp:
 
-../../core/naomi/generated-src/jni/NativeModule.hpp:
+../../core/naomi/generated-src/jni/NativeMenu.hpp:
 
-../../core/naomi/generated-src/cpp/module.hpp:
+../../core/naomi/generated-src/cpp/menu.hpp:

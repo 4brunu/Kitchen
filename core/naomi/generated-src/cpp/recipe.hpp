@@ -8,7 +8,7 @@
 namespace naomi_gen {
 
 class Dish;
-enum class module;
+enum class menu;
 
 class Recipe {
 public:
@@ -16,7 +16,7 @@ public:
 
     virtual std::shared_ptr<Dish> get_dish() = 0;
 
-    virtual module get_module() = 0;
+    virtual menu get_menu() = 0;
 };
 
 }  // namespace naomi_gen

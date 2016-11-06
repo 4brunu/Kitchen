@@ -1,11 +1,9 @@
-module = enum
+menu = enum
 {
-	CONFIG;
-	CATALOG;
-	CHECKOUT;
+	OPEN_BEETROOT_SANDWICH;
 }
 
-intention = enum
+package = enum
 {
 	STORE_LIST;
 	PRODUCT_LIST;

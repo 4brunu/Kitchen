@@ -24,5 +24,6 @@ shared_ptr<naomi_gen::Sandwich> naomi_gen::Sandwich::get_instance() {
 }
 
 shared_ptr<naomi_gen::Recipe> Application::get_recipe() {
-    return make_shared<MasterChefRecipe>(make_shared<ConfigModule>(), naomi_gen::module::CHECKOUT);
+    return make_shared<MasterChefRecipe>(make_shared<ConfigModule>(), 
+            naomi_gen::menu::OPEN_BEETROOT_SANDWICH);
 }

@@ -13,29 +13,33 @@
 
 #include "include/chef/MasterChef.hpp"
 
-MasterChef::MasterChef(const shared_ptr<MasterChefHandler> & handler,
-        const shared_ptr<MasterChefService> & service)
-: m_handler{handler}, m_service{service}
+MasterChef::MasterChef(const string & root,
+        const shared_ptr<Handler> & handler,
+        const shared_ptr<Service> & service)
+: m_root{ move(root) }
 {
+    m_handler = make_shared<MasterChefHandler>(handler);
+    m_service = make_shared<MasterChefService>(service);
+    
     m_version = naomi::version;
-    m_store = make_shared<MasterChefMenu>(m_handler, m_service);
-}
-
-MasterChef::~MasterChef() {
-
+    m_store = make_shared<MasterChefMenu>();
 }
 
 string MasterChef::get_version() {
     return m_version;
 }
 
-shared_ptr<naomi_gen::Dish> MasterChef::grab(naomi_gen::module module) {
-    return m_store->getMasterChefs().at(module);
+shared_ptr<naomi_gen::Dish> MasterChef::grab(naomi_gen::menu menu) {
+    return m_store->getMasterChefs().at(menu);
 }
 
 void MasterChef::add_recipe(const shared_ptr<naomi_gen::Recipe>& recipe) {
-    shared_ptr<MasterChefDish> dish(dynamic_cast<MasterChefDish*> (recipe->get_dish().get()));
-    m_store->addDish(dish, recipe->get_module());
+    shared_ptr<MasterChefDish> chef = dynamic_pointer_cast<MasterChefDish> (recipe->get_dish());
+    if (chef == nullptr) {
+        return;
+    }
+    chef->on_create(m_root, m_handler, m_service);
+    m_store->addDish(chef, recipe->get_menu());
 }
 
 

@@ -13,20 +13,11 @@
 
 #include "include/chef/MasterChefMenu.hpp"
 
-MasterChefMenu::MasterChefMenu(const shared_ptr<MasterChefHandler> & handler, const shared_ptr<MasterChefService> & service) 
-: m_handler {handler}, m_service {service} {
-}
-
-MasterChefMenu::~MasterChefMenu() {
-}
-
-map<naomi_gen::module, shared_ptr<MasterChefDish>> MasterChefMenu::getMasterChefs() {
+map<naomi_gen::menu, shared_ptr<MasterChefDish>> MasterChefMenu::getMasterChefs() {
     return m_mapper;
 }
 
-void MasterChefMenu::addDish(const shared_ptr<MasterChefDish> & module_obj, naomi_gen::module module) {
-    module_obj->set_handler(m_handler);
-    module_obj->set_service(m_service);
-    m_mapper.insert( pair<naomi_gen::module, shared_ptr<MasterChefDish>>(module, module_obj) );
+void MasterChefMenu::addDish(const shared_ptr<MasterChefDish> & menu_obj, naomi_gen::menu menu) {
+    m_mapper.insert( pair<naomi_gen::menu, shared_ptr<MasterChefDish>>(menu, menu_obj) );
 }
 

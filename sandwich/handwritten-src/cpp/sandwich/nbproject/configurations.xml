@@ -5,7 +5,12 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>Application.hpp</itemPath>
+      <itemPath>BaseModule.hpp</itemPath>
       <itemPath>ConfigModule.hpp</itemPath>
+      <itemPath>ResponseObject.hpp</itemPath>
+      <itemPath>RestModel.hpp</itemPath>
+      <itemPath>SharedPreferences.hpp</itemPath>
+      <itemPath>Stores.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -15,6 +20,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>Application.cpp</itemPath>
+      <itemPath>BaseModule.cpp</itemPath>
       <itemPath>ConfigModule.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -46,9 +52,21 @@
       </item>
       <item path="Application.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="BaseModule.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BaseModule.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="ConfigModule.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ConfigModule.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ResponseObject.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="RestModel.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SharedPreferences.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Stores.hpp" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="2">
@@ -75,9 +93,21 @@
       </item>
       <item path="Application.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="BaseModule.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BaseModule.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="ConfigModule.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ConfigModule.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ResponseObject.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="RestModel.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SharedPreferences.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Stores.hpp" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

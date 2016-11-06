@@ -17,130 +17,127 @@
 #include "map"
 #include "lib/stl.hpp"
 #include "dish.hpp"
+#include "menu.hpp"
 #include "recipe.hpp"
-#include "response.hpp"
-#include "intention.hpp"
+#include "package.hpp"
+#include "service_binder.hpp"
 #include "MasterChefHandler.hpp"
 #include "MasterChefService.hpp"
 
+/**
+ * 
+ */
 class MasterChefRecipe : public naomi_gen::Recipe
 {
-    naomi_gen::module m_module;
+    naomi_gen::menu m_menu;
     shared_ptr<naomi_gen::Dish> m_dish;
 
 public:
-    MasterChefRecipe(const shared_ptr<naomi_gen::Dish>& dish, naomi_gen::module module)
-    : m_module{module}, m_dish{dish}
-    {
-
-    }
-
-    virtual ~MasterChefRecipe()
+    MasterChefRecipe(const shared_ptr<naomi_gen::Dish>& dish, naomi_gen::menu menu)
+    : m_menu{move(menu)}, m_dish{move(dish)}
     {
     }
 
-    virtual shared_ptr<naomi_gen::Dish> get_dish()
+    virtual naomi_gen::menu get_menu() override
+    {
+        return m_menu;
+    }
+
+    virtual shared_ptr<naomi_gen::Dish> get_dish() override
     {
         return m_dish;
     }
 
-    virtual naomi_gen::module get_module()
-    {
-        return m_module;
-    }
-
 };
 
+/**
+ * 
+ */
 class MasterChefDish : public naomi_gen::Dish
 {
 public:
 
-    virtual ~MasterChefDish()
+    MasterChefDish & operator=(MasterChefDish & orig)
     {
+        if (this != &orig)
+        {
+
+        }
+        return * this;
     }
 
-    virtual void serve(naomi_gen::intention intent,
+    virtual void on_create(const string & root,
+            const shared_ptr<MasterChefHandler>& handler,
+            const shared_ptr<MasterChefService>& service) = 0;
+
+    virtual void serve(naomi_gen::package package,
             const unordered_map<string, string> & params,
-            const shared_ptr<naomi_gen::Response> & callback) = 0;
+            const shared_ptr<naomi_gen::ServiceBinder> & callback) = 0;
 
-private:
-    shared_ptr<MasterChefHandler> m_handler;
-    shared_ptr<MasterChefService> m_service;
-
-public:
-
-    shared_ptr<MasterChefHandler> get_handler()
-    {
-        return m_handler;
-    }
-
-    shared_ptr<MasterChefService> get_service()
-    {
-        return m_service;
-    }
-
-public:
-
-    void set_handler(const shared_ptr<MasterChefHandler>& handler)
-    {
-        m_handler = handler;
-    }
-
-    void set_service(const shared_ptr<MasterChefService>& service)
-    {
-        m_service = service;
-    }
 };
 
+/**
+ * 
+ */
 template<class T>
 class MasterChefModule : public MasterChefDish
 {
 public:
-    using action = naomi_gen::intention;
-    using intent_map = void (T::*) (const shared_ptr<naomi_gen::Response>& callback);
+    using action = naomi_gen::package;
+    using package_map = void (T::*) (const shared_ptr<MasterChefHandler>& handler,
+            const unordered_map<string, string>& params,
+            const shared_ptr<naomi_gen::ServiceBinder>& callback);
 
 public:
+    virtual void set_packages(map<naomi_gen::package, package_map>* mapper) = 0;
 
-    virtual ~MasterChefModule()
+public:
+    
+    string get_path()
     {
+        return m_root;
     }
 
-public:
-    virtual void set_intentions(map<naomi_gen::intention, intent_map> * mapper) = 0;
+    void on_create(const string & root,
+            const shared_ptr<MasterChefHandler>& handler,
+            const shared_ptr<MasterChefService>& service)
+    {
+        m_root = move(root);
+        m_handler = move(handler);
+        m_service = move(service);
+    }
 
-public:
-
-    virtual void serve(naomi_gen::intention intent,
+    virtual void serve(naomi_gen::package package,
             const unordered_map<string, string> & params,
-            const shared_ptr<naomi_gen::Response>& callback) override
+            const shared_ptr<naomi_gen::ServiceBinder>& callback) override
     {
-        m_params = params;
-        map<naomi_gen::intention, intent_map> mapper = get_mapper();
-        set_intentions(&mapper);
-
-        intent_map task = mapper.at(intent);
-        get_service()->handle([&, task, callback] ()
-        {
-            ((dynamic_cast<T*> (this))->*task)(callback);
-        });
-    }
-
-public:
-
-    unordered_map<string, string> get_param()
-    {
-        return m_params;
-    }
-
-    map<naomi_gen::intention, intent_map> get_mapper()
-    {
-        return m_mapper;
+        set_packages(&m_mapper);
+        m_service->handle(get_task(m_mapper.at(package), params, callback));
     }
 
 private:
-    unordered_map<string, string> m_params;
-    map<naomi_gen::intention, intent_map> m_mapper;
+
+    naomi::TaskHandler::Task get_task(package_map task,
+            const unordered_map<string, string> & params,
+            const shared_ptr<naomi_gen::ServiceBinder>& callback)
+    {
+        return [this, task, params, callback]
+        {
+            ((dynamic_cast<T*> (this))->*task)(m_handler, params, callback);
+        };
+    }
+
+private:
+    string m_root;
+    shared_ptr<MasterChefHandler> m_handler;
+    shared_ptr<MasterChefService> m_service;
+    
+    map<naomi_gen::package, package_map> m_mapper;
+
 };
 
 #endif /* MasterChefMODULE_HPP */
+
+
+
 

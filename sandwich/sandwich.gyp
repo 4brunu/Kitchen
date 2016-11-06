@@ -8,7 +8,7 @@
               "../core/naomi/../support-lib/support_lib.gyp:djinni_jni",
               "../chef/chef.gyp:libchef_jni",
             ],
-	    "libraries": ["libcurl.a", "librestful.a", "libiconv.a", "libyajl.a", "libcurlcpp.a"],
+	    "libraries": ["libcurl.a", "librestful.a", "libiconv.a", "libyajl.a", "libcurlcpp.a", "libleveldb.a"],
             "ldflags": [ "-llog", "-lz", "-latomic", "-Wl,--build-id,--gc-sections,--exclude-libs,ALL" ],
             "sources": [
 		"<!@(python ../core/naomi/glob.py handwritten-src/cpp '*.cpp')",

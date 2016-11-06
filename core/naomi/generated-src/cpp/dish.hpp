@@ -9,14 +9,14 @@
 
 namespace naomi_gen {
 
-class Response;
-enum class intention;
+class ServiceBinder;
+enum class package;
 
 class Dish {
 public:
     virtual ~Dish() {}
 
-    virtual void serve(intention intent, const std::unordered_map<std::string, std::string> & params, const std::shared_ptr<Response> & callback) = 0;
+    virtual void serve(package package_list, const std::unordered_map<std::string, std::string> & params, const std::shared_ptr<ServiceBinder> & binder) = 0;
 };
 
 }  // namespace naomi_gen

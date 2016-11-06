@@ -3,8 +3,8 @@
 
 #include "NativeDish.hpp"  // my header
 #include "Marshal.hpp"
-#include "NativeIntention.hpp"
-#include "NativeResponse.hpp"
+#include "NativePackage.hpp"
+#include "NativeServiceBinder.hpp"
 
 namespace djinni_generated {
 
@@ -21,14 +21,14 @@ CJNIEXPORT void JNICALL Java_com_siliconbear_kitchen_Dish_00024CppProxy_nativeDe
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 
-CJNIEXPORT void JNICALL Java_com_siliconbear_kitchen_Dish_00024CppProxy_native_1serve(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jobject j_intent, jobject j_params, jobject j_callback)
+CJNIEXPORT void JNICALL Java_com_siliconbear_kitchen_Dish_00024CppProxy_native_1serve(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jobject j_packageList, jobject j_params, jobject j_binder)
 {
     try {
         DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
         const auto& ref = ::djinni::objectFromHandleAddress<::naomi_gen::Dish>(nativeRef);
-        ref->serve(::djinni_generated::NativeIntention::toCpp(jniEnv, j_intent),
+        ref->serve(::djinni_generated::NativePackage::toCpp(jniEnv, j_packageList),
                    ::djinni::Map<::djinni::String, ::djinni::String>::toCpp(jniEnv, j_params),
-                   ::djinni_generated::NativeResponse::toCpp(jniEnv, j_callback));
+                   ::djinni_generated::NativeServiceBinder::toCpp(jniEnv, j_binder));
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
 }
 

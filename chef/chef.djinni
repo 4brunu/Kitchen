@@ -1,9 +1,16 @@
 @import "../application.djinni"
 
+load_type = enum
+{
+	LAZY;
+	STRICT;
+	STATIC;
+}
+
 recipe = interface +c 
 {
 	get_dish(): dish;
-	get_module(): module;
+	get_menu(): menu;
 }
 
 runnable = interface +c 
@@ -31,20 +38,24 @@ api = interface +c
 chef = interface +c 
 {
 	get_version(): string;
-	grab(module: module): dish;
+	grab(menu: menu): dish;
 	add_recipe(recipe: recipe);
 }
 
-response = interface +o +j 
+service_binder = interface +o +j 
 {
-	on_load(message: string);
+	load_type(): load_type;
+	on_load(message: string, cursor: simple_cursor);
 }
 
 dish = interface +c 
 {
-	serve(intent: intention, params: map<string, string>, callback: response);
+	serve(package_list: package, params: map<string, string>, binder: service_binder);
 }
 
+simple_cursor = interface +c 
+{
 
+}
 
 

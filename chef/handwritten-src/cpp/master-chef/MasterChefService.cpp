@@ -14,7 +14,7 @@
 #include "include/chef/MasterChefService.hpp"
 
 MasterChefService::MasterChefService(const shared_ptr<naomi_gen::Service> & service)
-: m_done{false}, m_start{false}, m_service{service}
+: m_done{false}, m_start{false}, m_service{ move(service) }
 {
     m_service->on_create();
     m_service->on_start(naomi::app, make_shared<naomi::RunnableHandler>([&] {

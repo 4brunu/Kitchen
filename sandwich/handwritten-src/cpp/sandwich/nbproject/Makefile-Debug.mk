@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Application.o \
+	${OBJECTDIR}/BaseModule.o \
 	${OBJECTDIR}/ConfigModule.o
 
 
@@ -67,6 +68,11 @@ ${OBJECTDIR}/Application.o: Application.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Application.o Application.cpp
+
+${OBJECTDIR}/BaseModule.o: BaseModule.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/BaseModule.o BaseModule.cpp
 
 ${OBJECTDIR}/ConfigModule.o: ConfigModule.cpp 
 	${MKDIR} -p ${OBJECTDIR}

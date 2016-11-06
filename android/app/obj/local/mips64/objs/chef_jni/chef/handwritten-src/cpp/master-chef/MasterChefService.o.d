@@ -6,6 +6,7 @@
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/condition_variable \
  ../../chef/handwritten-src/cpp/master-chef/include/chef/lib/stl.hpp \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/memory \
+ /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/thread \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/sstream \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/iostream \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/algorithm \
@@ -25,6 +26,8 @@
 ../../chef/handwritten-src/cpp/master-chef/include/chef/lib/stl.hpp:
 
 /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/memory:
+
+/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/thread:
 
 /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/sstream:
 

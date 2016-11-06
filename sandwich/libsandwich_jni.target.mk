@@ -27,6 +27,7 @@ GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
 LOCAL_SRC_FILES := \
 	sandwich/handwritten-src/cpp/sandwich/ConfigModule.cpp \
+	sandwich/handwritten-src/cpp/sandwich/BaseModule.cpp \
 	sandwich/handwritten-src/cpp/sandwich/Application.cpp
 
 
@@ -135,6 +136,7 @@ LOCAL_STATIC_LIBRARIES := \
 	libiconv \
 	libyajl \
 	libcurlcpp \
+	libleveldb \
 	sqlite3 \
 	djinni_jni
 

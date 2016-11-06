@@ -4,7 +4,7 @@
 #include "NativeChef.hpp"  // my header
 #include "Marshal.hpp"
 #include "NativeDish.hpp"
-#include "NativeModule.hpp"
+#include "NativeMenu.hpp"
 #include "NativeRecipe.hpp"
 
 namespace djinni_generated {
@@ -32,12 +32,12 @@ CJNIEXPORT jstring JNICALL Java_com_siliconbear_kitchen_Chef_00024CppProxy_nativ
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
 
-CJNIEXPORT jobject JNICALL Java_com_siliconbear_kitchen_Chef_00024CppProxy_native_1grab(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jobject j_module)
+CJNIEXPORT jobject JNICALL Java_com_siliconbear_kitchen_Chef_00024CppProxy_native_1grab(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jobject j_menu)
 {
     try {
         DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
         const auto& ref = ::djinni::objectFromHandleAddress<::naomi_gen::Chef>(nativeRef);
-        auto r = ref->grab(::djinni_generated::NativeModule::toCpp(jniEnv, j_module));
+        auto r = ref->grab(::djinni_generated::NativeMenu::toCpp(jniEnv, j_menu));
         return ::djinni::release(::djinni_generated::NativeDish::fromCpp(jniEnv, r));
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }

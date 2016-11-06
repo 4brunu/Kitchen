@@ -5,6 +5,7 @@
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/string \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/memory \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/vector \
+ /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/thread \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/sstream \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/iostream \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/algorithm \
@@ -13,17 +14,17 @@
  ../../core/naomi/generated-src/cpp/runnable.hpp \
  ../../core/naomi/generated-src/cpp/api.hpp \
  ../../core/naomi/generated-src/cpp/service.hpp \
- ../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChefHandler.hpp \
  ../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChef.hpp \
  ../../core/naomi/generated-src/cpp/chef.hpp \
  ../../core/naomi/generated-src/cpp/dish.hpp \
  ../../core/naomi/generated-src/cpp/recipe.hpp \
- ../../core/naomi/generated-src/cpp/response.hpp \
  ../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChefMenu.hpp \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/map \
- ../../core/naomi/generated-src/cpp/module.hpp \
+ ../../core/naomi/generated-src/cpp/menu.hpp \
  ../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChefModule.hpp \
- ../../core/naomi/generated-src/cpp/intention.hpp \
+ ../../core/naomi/generated-src/cpp/package.hpp \
+ ../../core/naomi/generated-src/cpp/service_binder.hpp \
+ ../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChefHandler.hpp \
  ../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChefService.hpp \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/queue \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/mutex \
@@ -38,6 +39,8 @@
 /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/memory:
 
 /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/vector:
+
+/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/thread:
 
 /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/sstream:
 
@@ -55,8 +58,6 @@
 
 ../../core/naomi/generated-src/cpp/service.hpp:
 
-../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChefHandler.hpp:
-
 ../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChef.hpp:
 
 ../../core/naomi/generated-src/cpp/chef.hpp:
@@ -65,17 +66,19 @@
 
 ../../core/naomi/generated-src/cpp/recipe.hpp:
 
-../../core/naomi/generated-src/cpp/response.hpp:
-
 ../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChefMenu.hpp:
 
 /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/map:
 
-../../core/naomi/generated-src/cpp/module.hpp:
+../../core/naomi/generated-src/cpp/menu.hpp:
 
 ../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChefModule.hpp:
 
-../../core/naomi/generated-src/cpp/intention.hpp:
+../../core/naomi/generated-src/cpp/package.hpp:
+
+../../core/naomi/generated-src/cpp/service_binder.hpp:
+
+../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChefHandler.hpp:
 
 ../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChefService.hpp:
 

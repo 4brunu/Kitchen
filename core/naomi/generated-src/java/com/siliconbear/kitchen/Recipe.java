@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public abstract class Recipe {
     public abstract Dish getDish();
 
-    public abstract Module getModule();
+    public abstract Menu getMenu();
 
     private static final class CppProxy extends Recipe
     {
@@ -42,11 +42,11 @@ public abstract class Recipe {
         private native Dish native_getDish(long _nativeRef);
 
         @Override
-        public Module getModule()
+        public Menu getMenu()
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            return native_getModule(this.nativeRef);
+            return native_getMenu(this.nativeRef);
         }
-        private native Module native_getModule(long _nativeRef);
+        private native Menu native_getMenu(long _nativeRef);
     }
 }

@@ -15,16 +15,9 @@
 
 MasterChefApi::MasterChefApi(const string & root,
             const shared_ptr<Handler> & handler, 
-            const shared_ptr<Service> & service) {
-    m_handler = make_shared<MasterChefHandler>(handler);
-    m_service = make_shared<MasterChefService>(service);
+            const shared_ptr<Service> & service) : m_root { move(root) } {
     
-    cout << root;
-    m_application = make_shared<MasterChef>(m_handler, m_service);
-}
-
-MasterChefApi::~MasterChefApi() {
-    
+    m_application = make_shared<MasterChef>(m_root, handler, service);
 }
 
 shared_ptr<Chef> MasterChefApi::get_chef() {

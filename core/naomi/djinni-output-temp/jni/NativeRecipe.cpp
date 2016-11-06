@@ -3,7 +3,7 @@
 
 #include "NativeRecipe.hpp"  // my header
 #include "NativeDish.hpp"
-#include "NativeModule.hpp"
+#include "NativeMenu.hpp"
 
 namespace djinni_generated {
 
@@ -30,13 +30,13 @@ CJNIEXPORT jobject JNICALL Java_com_siliconbear_kitchen_Recipe_00024CppProxy_nat
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
 
-CJNIEXPORT jobject JNICALL Java_com_siliconbear_kitchen_Recipe_00024CppProxy_native_1getModule(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+CJNIEXPORT jobject JNICALL Java_com_siliconbear_kitchen_Recipe_00024CppProxy_native_1getMenu(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
 {
     try {
         DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
         const auto& ref = ::djinni::objectFromHandleAddress<::naomi_gen::Recipe>(nativeRef);
-        auto r = ref->get_module();
-        return ::djinni::release(::djinni_generated::NativeModule::fromCpp(jniEnv, r));
+        auto r = ref->get_menu();
+        return ::djinni::release(::djinni_generated::NativeMenu::fromCpp(jniEnv, r));
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
 

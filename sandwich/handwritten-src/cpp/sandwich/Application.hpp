@@ -14,10 +14,10 @@
 #ifndef APPLICATION_HPP
 #define APPLICATION_HPP
 
+#include "menu.hpp"
 #include "recipe.hpp"
 #include "chef/lib/stl.hpp"
 #include "sandwich.hpp"
-#include "module.hpp"
 #include "ConfigModule.hpp"
 
 class Application final : public naomi_gen::Sandwich

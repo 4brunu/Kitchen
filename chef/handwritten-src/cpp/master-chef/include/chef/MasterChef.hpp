@@ -19,7 +19,6 @@
 
 #include "dish.hpp"
 #include "recipe.hpp"
-#include "response.hpp"
 #include "MasterChefMenu.hpp"
 #include "MasterChefHandler.hpp"
 #include "MasterChefService.hpp"
@@ -29,19 +28,21 @@ using namespace naomi_gen;
 class MasterChef: public Chef
 {
 public:
-    MasterChef(const shared_ptr<MasterChefHandler> & handler, const shared_ptr<MasterChefService> & service);
-    virtual ~MasterChef();
+    MasterChef(const string & root,
+            const shared_ptr<Handler> & handler, 
+            const shared_ptr<Service> & service);
     
 public:
     virtual string get_version() override;
     
 public:
-    virtual shared_ptr<naomi_gen::Dish> grab(naomi_gen::module module) override;
+    virtual shared_ptr<naomi_gen::Dish> grab(naomi_gen::menu menu) override;
     
 public:
     virtual void add_recipe(const shared_ptr<naomi_gen::Recipe> & recipe) override;
     
 private:
+    string m_root;
     string m_version;
     
 private:

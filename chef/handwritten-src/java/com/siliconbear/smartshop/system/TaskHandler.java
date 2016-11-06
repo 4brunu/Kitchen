@@ -8,9 +8,8 @@ import com.siliconbear.kitchen.Handler;
 /**
  * Created by izehi on 10/22/16.
  */
-public class TaskHandler extends Handler implements java.lang.Runnable {
+public class TaskHandler extends Handler {
 
-    private com.siliconbear.kitchen.Runnable mRunnable;
     private android.os.Handler mHandler;
 
     public TaskHandler() {
@@ -18,13 +17,12 @@ public class TaskHandler extends Handler implements java.lang.Runnable {
     }
 
     @Override
-    public void post(com.siliconbear.kitchen.Runnable runnable) {
-        mRunnable = runnable;
-        mHandler.post(this);
-    }
-
-    @Override
-    public void run() {
-        mRunnable.run();
+    public void post(final com.siliconbear.kitchen.Runnable runnable) {
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                runnable.run();
+            }
+        });
     }
 }

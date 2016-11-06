@@ -25,7 +25,6 @@ private:
     
 public:
     MasterChefHandler(const shared_ptr<naomi_gen::Handler> & handler);
-    virtual ~MasterChefHandler();
     
 public:
     virtual void handle(const TaskHandler::Task & task) override;
