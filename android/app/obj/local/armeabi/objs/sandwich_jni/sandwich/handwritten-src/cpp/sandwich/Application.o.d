@@ -19,7 +19,6 @@
  ../../core/naomi/generated-src/cpp/load_type.hpp \
  ../../core/naomi/generated-src/cpp/service_binder.hpp \
  ../../core/naomi/generated-src/cpp/package.hpp \
- ../../sandwich/handwritten-src/cpp/sandwich/BaseModule.hpp \
  ../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChefModule.hpp \
  /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/map \
  ../../chef/handwritten-src/cpp/master-chef/include/chef/lib/stl.hpp \
@@ -106,8 +105,6 @@
 ../../core/naomi/generated-src/cpp/service_binder.hpp:
 
 ../../core/naomi/generated-src/cpp/package.hpp:
-
-../../sandwich/handwritten-src/cpp/sandwich/BaseModule.hpp:
 
 ../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChefModule.hpp:
 

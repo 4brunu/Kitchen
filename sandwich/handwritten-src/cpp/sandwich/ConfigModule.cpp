@@ -60,8 +60,8 @@ void ConfigModule::testing(const shared_ptr<MasterChefHandler>& handler,
 
     try {
         easy.perform();
-        string s = str.str();
-        handler->handle([callback, &s] () {
+        const char * s = str.str().c_str();
+        handler->handle([callback, s] () {
             callback->on_load(s, nullptr);
         });
     } catch (curl::curl_easy_exception error) {

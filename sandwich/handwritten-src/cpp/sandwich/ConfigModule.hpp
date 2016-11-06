@@ -19,7 +19,15 @@
 #include "package.hpp"
 
 #include "chef/lib/stl.hpp"
-#include "BaseModule.hpp"
+#include "chef/MasterChefModule.hpp"
+
+#include "curl_ios.h"
+#include "curl_easy.h"
+#include "curl_pair.h"
+#include "curl_form.h"
+#include "curl_exception.h"
+#include "curl_header.h"
+
 #include "Stores.hpp"
 #include "ResponseObject.hpp"
 #include "SharedPreferences.hpp"
@@ -29,7 +37,7 @@
 #include "curl_exception.h"
 #include "curl_header.h"
 
-class ConfigModule : public BaseModule<ConfigModule>
+class ConfigModule : public MasterChefModule<ConfigModule>
 {
     using package_mapper = map<naomi_gen::package, package_map>;
 
