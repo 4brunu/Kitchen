@@ -120,6 +120,7 @@ public:
         }
         db->Get(leveldb::ReadOptions(), "3", &res);
 
+        delete db;
         return make_shared<cursor>(res);
     }
 
