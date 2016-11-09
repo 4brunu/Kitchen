@@ -6,6 +6,7 @@ package com.siliconbear.kitchen;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public abstract class SimpleCursor {
+    public abstract String toJsonString();
 
     private static final class CppProxy extends SimpleCursor
     {
@@ -29,5 +30,13 @@ public abstract class SimpleCursor {
             destroy();
             super.finalize();
         }
+
+        @Override
+        public String toJsonString()
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            return native_toJsonString(this.nativeRef);
+        }
+        private native String native_toJsonString(long _nativeRef);
     }
 }

@@ -6,4 +6,6 @@
 
 @interface SMSimpleCursor : NSObject
 
+- (nonnull NSString *)toJsonString;
+
 @end

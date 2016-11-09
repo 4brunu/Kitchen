@@ -7,6 +7,7 @@
       <itemPath>Application.hpp</itemPath>
       <itemPath>BaseModule.hpp</itemPath>
       <itemPath>ConfigModule.hpp</itemPath>
+      <itemPath>CurlUtil.hpp</itemPath>
       <itemPath>ResponseObject.hpp</itemPath>
       <itemPath>RestModel.hpp</itemPath>
       <itemPath>SharedPreferences.hpp</itemPath>
@@ -60,6 +61,8 @@
       </item>
       <item path="ConfigModule.hpp" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="CurlUtil.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="ResponseObject.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="RestModel.hpp" ex="false" tool="3" flavor2="0">
@@ -100,6 +103,8 @@
       <item path="ConfigModule.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="ConfigModule.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CurlUtil.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="ResponseObject.hpp" ex="false" tool="3" flavor2="0">
       </item>

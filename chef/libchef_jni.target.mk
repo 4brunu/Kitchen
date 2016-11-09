@@ -25,11 +25,11 @@ LOCAL_GENERATED_SOURCES :=
 GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
 LOCAL_SRC_FILES := \
-	chef/handwritten-src/cpp/master-chef/MasterChef.cpp \
-	chef/handwritten-src/cpp/master-chef/MasterChefService.cpp \
-	chef/handwritten-src/cpp/master-chef/MasterChefMenu.cpp \
 	chef/handwritten-src/cpp/master-chef/MasterChefApi.cpp \
-	chef/handwritten-src/cpp/master-chef/MasterChefHandler.cpp
+	chef/handwritten-src/cpp/master-chef/MasterChef.cpp \
+	chef/handwritten-src/cpp/master-chef/MasterChefHandler.cpp \
+	chef/handwritten-src/cpp/master-chef/MasterChefMenu.cpp \
+	chef/handwritten-src/cpp/master-chef/MasterChefService.cpp
 
 
 # Flags passed to both C and C++ files.

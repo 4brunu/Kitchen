@@ -45,7 +45,8 @@ chef = interface +c
 service_binder = interface +o +j 
 {
 	load_type(): load_type;
-	on_load(message: string, cursor: simple_cursor);
+	on_error(message: string);
+	on_load(message: string, cache: bool, cursor: simple_cursor);
 }
 
 dish = interface +c 
@@ -55,7 +56,7 @@ dish = interface +c
 
 simple_cursor = interface +c 
 {
-
+    to_json_string(): string;
 }
 
 

@@ -6,5 +6,7 @@ package com.siliconbear.kitchen;
 public abstract class ServiceBinder {
     public abstract LoadType loadType();
 
-    public abstract void onLoad(String message, SimpleCursor cursor);
+    public abstract void onError(String message);
+
+    public abstract void onLoad(String message, boolean cache, SimpleCursor cursor);
 }

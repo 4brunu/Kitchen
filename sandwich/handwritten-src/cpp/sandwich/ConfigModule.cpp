@@ -14,61 +14,75 @@
 #include "ConfigModule.hpp"
 
 ConfigModule::ConfigModule() {
-
 }
 
 void ConfigModule::set_packages(package_mapper* mapper) {
-    mapper->insert(pair<naomi_gen::package, package_map>(action::STORE_LIST, &ConfigModule::testing));
+    mapper->insert(pair<naomi_gen::package, package_map>(action::STORE_LIST,
+            &ConfigModule::get_stores));
 }
 
-void ConfigModule::testing(const shared_ptr<MasterChefHandler>& handler,
+/**
+ * 
+ * @param handler
+ * @param params
+ * @param callback
+ */
+void ConfigModule::get_stores(const shared_ptr<MasterChefHandler>& handler,
         const unordered_map<string, string>& params,
         const shared_ptr<naomi_gen::ServiceBinder>& callback) {
-    using curl::curl_easy;
-    using curl::curl_ios;
 
-    ostringstream str;
-    curl_ios<ostringstream> writer(str);
-
-    curl_easy easy(writer);
-    easy.add<CURLOPT_URL>("http://payporte.com/connector/config/get_stores");
-
+    CurlUtil curl_util("config/get_stores", params);
     if (callback->load_type() == naomi_gen::load_type::LAZY) {
-        handler->handle([callback] () {
-            callback->on_load("hello bruh!!!", nullptr);
-        });
+        load_store_list(handler, callback);
     }
-
-    curl::curl_header header;
-    curl::curl_form form;
-
-    using curl_pair = curl::curl_pair<CURLformoption, string>;
-
-    header.add("token: 50a868a0f44374e524ae8c2506aa8b4e");
-    header.add("Accept: application/json");
-
-    for (auto itr = params.begin(); itr != params.end(); ++itr) {
-        curl_pair name(CURLFORM_COPYNAME, itr->first);
-        curl_pair value(CURLFORM_COPYCONTENTS, itr->second);
-
-        form.add(name, value);
-    }
-    easy.add<CURLOPT_FOLLOWLOCATION>(1L);
-    easy.add<CURLOPT_HTTPPOST>(form.get());
-    easy.add<CURLOPT_SSL_VERIFYPEER>(false);
-    easy.add<CURLOPT_HTTPHEADER>(header.get());
+    
+    ResponseObject<Stores> response;
+    shared_ptr<naomi_gen::SimpleCursor> stores;
 
     try {
-        easy.perform();
-        const char * s = str.str().c_str();
-        handler->handle([callback, s] () {
-            callback->on_load(s, nullptr);
+        curl_util.make_request();     
+        response.parse(curl_util.get_response().c_str()); 
+   
+        stores = save_stores(response.m_data);
+        handler->handle([callback, response, stores] () {
+            
+            callback->on_load(response.m_message, false, stores);
         });
     } catch (curl::curl_easy_exception error) {
-        handler->handle([callback] () {
-            callback->on_load("failed", nullptr);
-        });
+
+        handler->handle([callback, error] () {
+            callback->on_error(string("Error in connection: ") + error.what());
+        }); 
     }
+}
+
+/**
+ * 
+ * @param stores
+ * @return 
+ */
+shared_ptr<naomi_gen::SimpleCursor> ConfigModule::save_stores(
+        const HasMany<Stores> & stores) {
+    SharedPreferences preferences(get_path());
+    preferences.save_all<Stores>(stores);
+    
+    return preferences.get_all<Stores>();
+}
+
+/**
+ * 
+ * @param handler
+ * @param callback
+ */
+void ConfigModule::load_store_list(const shared_ptr<MasterChefHandler>& handler,
+        const shared_ptr<naomi_gen::ServiceBinder>& callback) {
+    SharedPreferences preferences(get_path());
+    
+    shared_ptr<naomi_gen::SimpleCursor> cursor = preferences.get_all<Stores>();
+    handler->handle([callback, cursor] () {
+
+        callback->on_load("CACHED", true, cursor);
+    });
 }
 
 

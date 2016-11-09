@@ -14,12 +14,24 @@
 #ifndef STORES_HPP
 #define STORES_HPP
 
+#include "leveldb/db.h"
 #include "chef/lib/stl.hpp"
-#include "RestModel.hpp"
 
-class Stores : public RestModel<Stores>
+#pragma GCC diagnostic push 
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+
+#include <restful_mapper/model.h>
+#include <restful_mapper/internal/utf8.h>
+
+#pragma GCC diagnostic pop
+
+using namespace leveldb;
+using namespace restful_mapper;
+
+class Stores : public Model<Stores>
 {
 public:
+    
     Field<string> m_store_id;
     Field<string> m_store_name;
     Field<string> m_store_code;

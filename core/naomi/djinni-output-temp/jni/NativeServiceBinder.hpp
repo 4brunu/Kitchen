@@ -34,7 +34,8 @@ private:
         ~JavaProxy();
 
         ::naomi_gen::load_type load_type() override;
-        void on_load(const std::string & message, const std::shared_ptr<::naomi_gen::SimpleCursor> & cursor) override;
+        void on_error(const std::string & message) override;
+        void on_load(const std::string & message, bool cache, const std::shared_ptr<::naomi_gen::SimpleCursor> & cursor) override;
 
     private:
         friend ::djinni::JniInterface<::naomi_gen::ServiceBinder, ::djinni_generated::NativeServiceBinder>;
@@ -42,7 +43,8 @@ private:
 
     const ::djinni::GlobalRef<jclass> clazz { ::djinni::jniFindClass("com/siliconbear/kitchen/ServiceBinder") };
     const jmethodID method_loadType { ::djinni::jniGetMethodID(clazz.get(), "loadType", "()Lcom/siliconbear/kitchen/LoadType;") };
-    const jmethodID method_onLoad { ::djinni::jniGetMethodID(clazz.get(), "onLoad", "(Ljava/lang/String;Lcom/siliconbear/kitchen/SimpleCursor;)V") };
+    const jmethodID method_onError { ::djinni::jniGetMethodID(clazz.get(), "onError", "(Ljava/lang/String;)V") };
+    const jmethodID method_onLoad { ::djinni::jniGetMethodID(clazz.get(), "onLoad", "(Ljava/lang/String;ZLcom/siliconbear/kitchen/SimpleCursor;)V") };
 };
 
 }  // namespace djinni_generated

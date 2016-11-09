@@ -17,28 +17,18 @@
 #include "load_type.hpp"
 #include "service_binder.hpp"
 #include "package.hpp"
+#include "simple_cursor.hpp"
 
 #include "chef/lib/stl.hpp"
 #include "chef/MasterChefModule.hpp"
 
-#include "curl_ios.h"
-#include "curl_easy.h"
-#include "curl_pair.h"
-#include "curl_form.h"
-#include "curl_exception.h"
-#include "curl_header.h"
+#include "CurlUtil.hpp"
 
 #include "Stores.hpp"
 #include "ResponseObject.hpp"
 #include "SharedPreferences.hpp"
 
-#include "curl_ios.h"
-#include "curl_easy.h"
-#include "curl_exception.h"
-#include "curl_header.h"
-
-class ConfigModule : public MasterChefModule<ConfigModule>
-{
+class ConfigModule : public MasterChefModule<ConfigModule> {
     using package_mapper = map<naomi_gen::package, package_map>;
 
 public:
@@ -48,8 +38,15 @@ public:
     virtual void set_packages(package_mapper * mapper) override;
 
 public:
-    void testing(const shared_ptr<MasterChefHandler>& handler,
+    void get_stores(const shared_ptr<MasterChefHandler>& handler,
             const unordered_map<string, string>& params,
+            const shared_ptr<naomi_gen::ServiceBinder>& callback);
+
+private:
+    
+    shared_ptr<naomi_gen::SimpleCursor> save_stores(const HasMany<Stores> & stores);
+
+    void load_store_list(const shared_ptr<MasterChefHandler>& handler,
             const shared_ptr<naomi_gen::ServiceBinder>& callback);
 
 };

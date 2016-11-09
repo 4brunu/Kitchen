@@ -24,12 +24,21 @@ NativeServiceBinder::JavaProxy::~JavaProxy() = default;
     ::djinni::jniExceptionCheck(jniEnv);
     return ::djinni_generated::NativeLoadType::toCpp(jniEnv, jret);
 }
-void NativeServiceBinder::JavaProxy::on_load(const std::string & c_message, const std::shared_ptr<::naomi_gen::SimpleCursor> & c_cursor) {
+void NativeServiceBinder::JavaProxy::on_error(const std::string & c_message) {
+    auto jniEnv = ::djinni::jniGetThreadEnv();
+    ::djinni::JniLocalScope jscope(jniEnv, 10);
+    const auto& data = ::djinni::JniClass<::djinni_generated::NativeServiceBinder>::get();
+    jniEnv->CallVoidMethod(Handle::get().get(), data.method_onError,
+                           ::djinni::get(::djinni::String::fromCpp(jniEnv, c_message)));
+    ::djinni::jniExceptionCheck(jniEnv);
+}
+void NativeServiceBinder::JavaProxy::on_load(const std::string & c_message, bool c_cache, const std::shared_ptr<::naomi_gen::SimpleCursor> & c_cursor) {
     auto jniEnv = ::djinni::jniGetThreadEnv();
     ::djinni::JniLocalScope jscope(jniEnv, 10);
     const auto& data = ::djinni::JniClass<::djinni_generated::NativeServiceBinder>::get();
     jniEnv->CallVoidMethod(Handle::get().get(), data.method_onLoad,
                            ::djinni::get(::djinni::String::fromCpp(jniEnv, c_message)),
+                           ::djinni::get(::djinni::Bool::fromCpp(jniEnv, c_cache)),
                            ::djinni::get(::djinni_generated::NativeSimpleCursor::fromCpp(jniEnv, c_cursor)));
     ::djinni::jniExceptionCheck(jniEnv);
 }

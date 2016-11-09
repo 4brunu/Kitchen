@@ -1,15 +1,15 @@
-/home/izehi/Documents/Android/kitchen/android/app//obj/local/armeabi/objs/chef_jni/chef/handwritten-src/cpp/master-chef/MasterChefMenu.o: \
+/home/constantine/Documents/Android/kitchen/android/app//obj/local/armeabi/objs/chef_jni/chef/handwritten-src/cpp/master-chef/MasterChefMenu.o: \
  ../../chef/handwritten-src/cpp/master-chef/MasterChefMenu.cpp \
  ../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChefMenu.hpp \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/map \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/map \
  ../../chef/handwritten-src/cpp/master-chef/include/chef/lib/stl.hpp \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/memory \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/vector \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/thread \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/sstream \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/iostream \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/algorithm \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/unordered_map \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/memory \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/vector \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/thread \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/sstream \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/iostream \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/algorithm \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/unordered_map \
  ../../core/naomi/generated-src/cpp/handler.hpp \
  ../../core/naomi/generated-src/cpp/runnable.hpp \
  ../../core/naomi/generated-src/cpp/menu.hpp \
@@ -20,30 +20,30 @@
  ../../core/naomi/generated-src/cpp/service_binder.hpp \
  ../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChefHandler.hpp \
  ../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChefService.hpp \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/queue \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/mutex \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/condition_variable \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/queue \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/mutex \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/condition_variable \
  ../../core/naomi/generated-src/cpp/service.hpp
 
 ../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChefMenu.hpp:
 
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/map:
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/map:
 
 ../../chef/handwritten-src/cpp/master-chef/include/chef/lib/stl.hpp:
 
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/memory:
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/memory:
 
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/vector:
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/vector:
 
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/thread:
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/thread:
 
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/sstream:
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/sstream:
 
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/iostream:
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/iostream:
 
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/algorithm:
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/algorithm:
 
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/unordered_map:
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/unordered_map:
 
 ../../core/naomi/generated-src/cpp/handler.hpp:
 
@@ -65,10 +65,10 @@
 
 ../../chef/handwritten-src/cpp/master-chef/include/chef/MasterChefService.hpp:
 
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/queue:
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/queue:
 
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/mutex:
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/mutex:
 
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/condition_variable:
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/condition_variable:
 
 ../../core/naomi/generated-src/cpp/service.hpp:

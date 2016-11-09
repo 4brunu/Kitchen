@@ -50,9 +50,14 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onLoad(String message, SimpleCursor cursor) {
-                        webview.getSettings().setJavaScriptEnabled(true);
+                    public void onError(String message) {
                         webview.loadDataWithBaseURL("", message, "text/html", "UTF-8", "");
+                    }
+
+                    @Override
+                    public void onLoad(String message, boolean cache, SimpleCursor cursor) {
+                        webview.getSettings().setJavaScriptEnabled(true);
+                        webview.loadDataWithBaseURL("", "message: " + message + " data: " + cursor.toJsonString(), "text/html", "UTF-8", "");
                     }
                 });
     }

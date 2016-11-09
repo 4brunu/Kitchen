@@ -17,7 +17,9 @@ public:
 
     virtual ::naomi_gen::load_type load_type() = 0;
 
-    virtual void on_load(const std::string & message, const std::shared_ptr<SimpleCursor> & cursor) = 0;
+    virtual void on_error(const std::string & message) = 0;
+
+    virtual void on_load(const std::string & message, bool cache, const std::shared_ptr<SimpleCursor> & cursor) = 0;
 };
 
 }  // namespace naomi_gen

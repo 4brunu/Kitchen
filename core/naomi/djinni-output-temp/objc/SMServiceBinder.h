@@ -10,7 +10,10 @@
 
 - (SMLoadType)loadType;
 
+- (void)onError:(nonnull NSString *)message;
+
 - (void)onLoad:(nonnull NSString *)message
+         cache:(BOOL)cache
         cursor:(nullable SMSimpleCursor *)cursor;
 
 @end

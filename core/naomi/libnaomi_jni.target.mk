@@ -28,16 +28,16 @@ GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
 LOCAL_SRC_FILES := \
 	core/support-lib/jni/djinni_main.cpp \
-	core/naomi/generated-src/jni/NativeSimpleCursor.cpp \
-	core/naomi/generated-src/jni/NativeHandler.cpp \
-	core/naomi/generated-src/jni/NativeDish.cpp \
-	core/naomi/generated-src/jni/NativeChef.cpp \
+	core/naomi/generated-src/jni/NativeSandwich.cpp \
 	core/naomi/generated-src/jni/NativeService.cpp \
 	core/naomi/generated-src/jni/NativeRunnable.cpp \
-	core/naomi/generated-src/jni/NativeServiceBinder.cpp \
 	core/naomi/generated-src/jni/NativeRecipe.cpp \
+	core/naomi/generated-src/jni/NativeDish.cpp \
+	core/naomi/generated-src/jni/NativeHandler.cpp \
+	core/naomi/generated-src/jni/NativeServiceBinder.cpp \
 	core/naomi/generated-src/jni/NativeApi.cpp \
-	core/naomi/generated-src/jni/NativeSandwich.cpp
+	core/naomi/generated-src/jni/NativeSimpleCursor.cpp \
+	core/naomi/generated-src/jni/NativeChef.cpp
 
 
 # Flags passed to both C and C++ files.

@@ -1,35 +1,47 @@
-/home/izehi/Documents/Android/kitchen/android/app//obj/local/mips64/objs/naomi_jni/core/naomi/generated-src/jni/NativeSimpleCursor.o: \
+/home/constantine/Documents/Android/kitchen/android/app//obj/local/mips64/objs/naomi_jni/core/naomi/generated-src/jni/NativeSimpleCursor.o: \
  ../../core/naomi/generated-src/jni/NativeSimpleCursor.cpp \
  ../../core/naomi/generated-src/jni/NativeSimpleCursor.hpp \
  ../../core/support-lib/jni/djinni_support.hpp \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/cassert \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/exception \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/memory \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/mutex \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/unordered_map \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/cassert \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/exception \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/memory \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/mutex \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/unordered_map \
  ../../core/support-lib/jni/../proxy_cache_interface.hpp \
- /android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/typeindex \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/typeindex \
  ../../core/support-lib/jni/../djinni_common.hpp \
- ../../core/naomi/generated-src/cpp/simple_cursor.hpp
+ /home/constantine/android-ndk-r10e/platforms/android-21/arch-mips64/usr/include/jni.h \
+ ../../core/naomi/generated-src/cpp/simple_cursor.hpp \
+ ../../core/support-lib/jni/Marshal.hpp \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/unordered_set \
+ /home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/vector
 
 ../../core/naomi/generated-src/jni/NativeSimpleCursor.hpp:
 
 ../../core/support-lib/jni/djinni_support.hpp:
 
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/cassert:
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/cassert:
 
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/exception:
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/exception:
 
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/memory:
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/memory:
 
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/mutex:
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/mutex:
 
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/unordered_map:
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/unordered_map:
 
 ../../core/support-lib/jni/../proxy_cache_interface.hpp:
 
-/android-ndk-r11c/sources/cxx-stl/gnu-libstdc++/4.9/include/typeindex:
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/typeindex:
 
 ../../core/support-lib/jni/../djinni_common.hpp:
 
+/home/constantine/android-ndk-r10e/platforms/android-21/arch-mips64/usr/include/jni.h:
+
 ../../core/naomi/generated-src/cpp/simple_cursor.hpp:
+
+../../core/support-lib/jni/Marshal.hpp:
+
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/unordered_set:
+
+/home/constantine/android-ndk-r10e/sources/cxx-stl/gnu-libstdc++/4.9/include/vector:

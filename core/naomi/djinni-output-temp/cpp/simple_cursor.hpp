@@ -3,11 +3,15 @@
 
 #pragma once
 
+#include <string>
+
 namespace naomi_gen {
 
 class SimpleCursor {
 public:
     virtual ~SimpleCursor() {}
+
+    virtual std::string to_json_string() = 0;
 };
 
 }  // namespace naomi_gen
